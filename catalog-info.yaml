@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: challenge-api
+  tags:
+    - javascript
+  annotations:
+    backstage.io/source-location: url:https://github.com/topcoder-platform/challenge-api
+    github.com/project-slug: topcoder-platform/challenge-api
+spec:
+  type: service
+  owner: backstage-dev
+  lifecycle: production
