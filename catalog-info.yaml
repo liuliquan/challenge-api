@@ -2,12 +2,47 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: challenge-api
+  title: Challenge API
+  description: This microservice provides access and interaction with all sorts of Challenge data.
   tags:
     - javascript
+  links:
+    - url: https://github.com/topcoder-platform/challenge-api
+      title: Github Repo
+      icon: web
+    - url: https://app.circleci.com/pipelines/github/topcoder-platform/challenge-api
+      title: CircleCI
+      icon: web
+    - url: https://topcoder.atlassian.net/wiki/spaces/PLAT/pages/2821947508/Challenge+API
+      title: Challenge API
+      icon: web
   annotations:
     backstage.io/source-location: url:https://github.com/topcoder-platform/challenge-api
     github.com/project-slug: topcoder-platform/challenge-api
 spec:
   type: service
-  owner: backstage-dev
+  owner: platform
   lifecycle: production
+  system: Challenge-Services
+  providesApis:
+    - challenge-api
+  consumesApis:
+    - terms-service
+    - member-api
+    - groups-api
+    - tc-project-service
+    - resources-api
+    - submissions-api
+    - domain-challenge
+    - bus-api
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: challenge-api
+spec:
+  type: openapi
+  lifecycle: production
+  owner: platform
+  definition:
+    $text: https://github.com/topcoder-platform/challenge-api/blob/master/docs/swagger.yaml
