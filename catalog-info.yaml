@@ -24,7 +24,7 @@ spec:
   type: service
   owner: platform
   lifecycle: production
-  system: Challenge-Services
+  system: Challenge-Core
   providesApis:
     - challenge-api
   consumesApis:
@@ -45,5 +45,6 @@ spec:
   type: openapi
   lifecycle: production
   owner: platform
+  system: Challenge-Core
   definition:
     $text: https://github.com/topcoder-platform/challenge-api/blob/master/docs/swagger.yaml
