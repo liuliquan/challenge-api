@@ -19,6 +19,7 @@ metadata:
   annotations:
     backstage.io/source-location: url:https://github.com/topcoder-platform/challenge-api
     github.com/project-slug: topcoder-platform/challenge-api
+    circleci.com/project-slug: github/topcoder-platform/challenge-api
 spec:
   type: service
   owner: platform
